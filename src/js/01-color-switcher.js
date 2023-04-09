@@ -3,16 +3,17 @@ stopBtn = document.querySelector('.stop');
 let timerId;
 
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  document.body.style.backgroundColor = `#${Math.floor(
+    Math.random() * 16777215
+  ).toString(16)}`;
 }
 
-startBtn.addEventListener('click', () => {
+const changeColors = () => {
   startBtn.setAttribute('disabled', '');
-  timerId = setInterval(
-    (document.body.style.backgroundColor = getRandomHexColor()),
-    1000
-  );
-});
+  timerId = setInterval(getRandomHexColor, 1000);
+};
+
+startBtn.addEventListener('click', changeColors);
 
 stopBtn.addEventListener('click', () => {
   startBtn.removeAttribute('disabled', '');
