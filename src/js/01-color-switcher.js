@@ -1,5 +1,5 @@
-startBtn = document.querySelector('.start');
-stopBtn = document.querySelector('.stop');
+const startBtn = document.querySelector('.start');
+const stopBtn = document.querySelector('.stop');
 let timerId;
 
 function getRandomHexColor() {
